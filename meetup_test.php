@@ -29,7 +29,7 @@ foreach($events as $event) {
     }
     $meetup_event_html = <<<HERE
 <li class="meetup_li">
-    <img src="/assets/meetup_icon.png" />
+    <img src="assets/meetup_icon.png" />
     <a class="meetup_event_link" href="{$event->event_url}"><span class="meetup_event_name">{$event->name}</span></a><br/>
     <span class="meetup_event_date">{$meetup_date}</span> -
     <span class="meetup_event_venue">{$venue_name}</span><br />

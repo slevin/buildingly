@@ -22,7 +22,7 @@
     <style>
          .header_bar {
     height:176px;
-    background-image: url('/assets/header_bar.png');
+    background-image: url('assets/header_bar.png');
     background-repeat: repeat-x;
 }       body {
              background-color: #f5f4ef;
@@ -31,7 +31,7 @@
          }
         .container {
             width: 1000px;
-            background-image: url('/assets/content_bg.png');
+            background-image: url('assets/content_bg.png');
             background-repeat: repeat-y;
             padding-top: 20px;
         }
@@ -66,7 +66,7 @@
 
           .searchbar {
               width: 530px;
-              background: url('/assets/search_bar.png') no-repeat;
+              background: url('assets/search_bar.png') no-repeat;
               height:52px;
               border:none;
               font-size: 24px;
@@ -77,12 +77,12 @@
               padding: 0px; 0px; 0px; 0px;
               width:54px;
               height: 53px;
-              background:url('/assets/search_button.png') no-repeat;
+              background:url('assets/search_button.png') no-repeat;
           }
 
 
           .dealbutton {
-              background: url('/assets/get_deal_btn.png') no-repeat;
+              background: url('assets/get_deal_btn.png') no-repeat;
           }
 
           .fs_li {
@@ -153,11 +153,11 @@ function getlocalinfo(arrLatLon){
   <body>
     <div class="header_bar">
         <div style="position:absolute;left:130px;top:50px;">
-            <img src="/assets/buildingly_logo_new.png">
+            <img src="assets/buildingly_logo_new.png">
         </div>
         <div style="position:absolute; left:400px; top:55px; width: 700px;">
              <div style="position:relative;">
-            <input size="100" class="searchbar" type="text" value="902 Broadway, New York, NY" value="<?php echo $address; ?>" style="padding-top: 0px"/>&nbsp;
+            <input size="100" class="searchbar" type="text" value="<?php echo $address; ?>" style="padding-top: 0px"/>&nbsp;
 
             <button class="searchbutton" style="position:absolute; left: 500px;"></button>
              </div>
@@ -218,7 +218,7 @@ window.location.href = 'index.php?city=new%20york&address='+escape($('#address')
 
         <div style="position: relative; left: 70px; top: 235px; width: 700px;">
              <div style="position:relative;">
-            <input size="100" class="searchbar" type="text" value="902 Broadway" style="padding-top: 0px"/>&nbsp;
+            <input id="address" size="100" class="searchbar" type="text" value="902 Broadway" style="padding-top: 0px"/>&nbsp;
             <button class="searchbutton" style="position:absolute; left: 500px;" onclick="setaddress()"></button>
              </div>
 

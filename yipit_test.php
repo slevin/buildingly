@@ -64,7 +64,7 @@ date_default_timezone_set("America/New_York");
           <div align="left" style="border:1px solid black">Worth: {$deal->value->formatted} | Price: {$deal->price->formatted} | Discount: {$deal->discount->formatted}</div>
           <br/>
           <div align="left" style="border:1px black">Time left: {$days_remaining} days, {$hours_remaining} hours<br/></div>
-          <div align="left"<p><a class="btn primary large" style="margin-top: 10px;background: url('/assets/get_deal_btn.png') no-repeat; width:125px; height:35px;border:none;" href="{$deal->url}"></a></p>
+          <div align="left"<p><a class="btn primary large" style="margin-top: 10px;background: url('assets/get_deal_btn.png') no-repeat; width:125px; height:35px;border:none;" href="{$deal->url}"></a></p>
           </div>
           <br />
 EOT;
