@@ -34,7 +34,7 @@ $event_url = "https://api.foursquare.com/v2/venues/VENUE_ID/events"
 foreach($venues_json as $venue) {
     $venue_id = $venue->id;
     $venue_name = $venue->name;
-    $venue_url = "https://foursquare.com/v/{$venue_name}";
+    $venue_url = "https://foursquare.com/v/{$venue_id}";
     $venue_here = "";
     if (array_key_exists("hereNow", $venue)) {
         $venue_here = $venue->hereNow->count;
