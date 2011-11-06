@@ -3,3 +3,7 @@
     background-image: url('/assets/header_bar.png');
     background-repeat: repeat-x;
 }
+
+#yipit>h3{line-height: 20px}
+
+h4.bname{font-size: 15px;}
