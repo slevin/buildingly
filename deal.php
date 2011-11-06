@@ -1,7 +1,10 @@
 <?php
-
+if($_POST){
+	session_start();
+	print_r($_POST);
+	
+}
 ?>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -16,6 +19,7 @@
 
     <!-- Le styles -->
     <link href="bootstrap.css" rel="stylesheet">
+    <link href="/jquery-ui-1.7.3.custom/css/ui-lightness/jquery-ui-1.7.3.custom.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -24,10 +28,10 @@
     <style>
 div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.gif');height:10em; width:10em;background-repeat:no-repeat;}
 div.selectedtab{color:red;}
-
+div.tabselector{display: inline-block}
 </style>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.js"></script>
-
+	<script type="text/javascript" src="/jquery-ui-1.7.3.custom/js/jquery-ui-1.7.3.custom.min.js"></script>
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -35,12 +39,13 @@ div.selectedtab{color:red;}
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
 		<script>
+
 var selectedtab;
 
 function gototab(type){
 if (type != selectedtab)
 {
-$('#'+selectedtab+'tab').removeClass();
+$('#'+selectedtab+'tab').removeClass('selectedtab');
 $('#'+selectedtab+'content').css('display', 'none');
 selectedtab = type;
 $('#'+selectedtab+'tab').addClass('selectedtab');
@@ -61,8 +66,10 @@ success:function(data){filldiv(data);}});
 }
 
 			function init(){
+				$('.tabselector').tabs();
 gototab('most-recent');
 callajax("most-recent");
+
 setTimeout('callajax("most-viewed")', 1000);
 setTimeout('callajax("most-commented")', 2000);
 setTimeout('callajax("most-shared")',3000);
@@ -97,33 +104,31 @@ $('#'+type+'content').css('display', '');
         <td>
             <div>
         What deal would you like to offer?<br />
-            <textarea rows="5" cols="50">
+            <textarea rows="5" cols="50" id="desc" name="desc">
 
             </textarea>
 </div>
             <div>
             How can people access your deal?<br />
-            <select>
+            <select id="pick-up" name="pick-up">
                 <option>In-Store</option>
                 <option>Call Us</option>
                 <option>Fax Us</option>
                 <option>Go to the website for details</option>
-                </select><br />
-                <input type="text" />
+                </select>
             </div>
-
+			
             <div>
             Date and time constraints for your deal:<br/>
-            <input type="text"/><br />
+            <input type="text" id="constraints" name="constraints"/>
             </div>
-
             <div>
-            Do people need a coupon to access your deal?<br/>
-            <select>
-                <option>No</option>
-                <option>Printed Coupon</option>
-                <option>Secret Code</option>
-            </select>
+            	<p>How much does it cost?</p>	
+            	<input type="text" id="price" name="price"/>
+            </div>
+            <div>
+            	<p>What do you usually charge for it?</p>	
+            	<input type="text" id="worth" name="worth"/>
             </div>
         </td>
 
