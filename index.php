@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,19 +27,19 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.js"></script>
 	<script>
 			$(function(){
-					$.ajax({url:"../foursquare_test.php", 
+					$.ajax({url:"foursquare_test.php", 
 					dataType:'html',
 					success:function(data){$('#foursquare').append(data); $('#loadingfoursquare').css('display', 'none');}});
 
-					$.ajax({url:"../yipit_test.php", 
+					$.ajax({url:"yipit_test.php", 
 					dataType:'html',
 					success:function(data){$('#yipit').append(data); $('#loadingyipit').css('display', 'none');}});
 
-					$.ajax({url:"../ordr_test.php", 
+					$.ajax({url:"ordr_test.php", 
 					dataType:'html',
 					success:function(data){$('#ordr').append(data); $('#loadingordr').css('display', 'none');}});
 
-					$.ajax({url:"../meetup_test.php", 
+					$.ajax({url:"meetup_test.php", 
 					dataType:'html',
 					success:function(data){$('#meetup').append(data); $('#loadingmeetup').css('display', 'none');}});
 			});
