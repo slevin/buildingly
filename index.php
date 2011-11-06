@@ -43,7 +43,8 @@ if ($address != ''):
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="bootstrap.css" rel="stylesheet">
+    <link href="/bootstrap.css" rel="stylesheet">
+    <link href="/buldingly.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -83,53 +84,79 @@ function getlocalinfo(arrLatLon){
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+      <style>
+         .header_bar {
+    height:176px;
+    background-image: url('/assets/header_bar.png');
+    background-repeat: repeat-x;
+}       body {
+             background-color: #f5f4ef;
+             margin-top: 0px;
+             padding-top: 0px;
+         }
+        .container {
+            width: 1000px;
+            background-image: url('/assets/content_bg.png');
+            background-repeat: repeat-y;
+            padding-top: 20px;
+        }
+        .title_main {
+            font-family: Helvetica;
+            font-size: 18pt;
+            color: #f45604;
+        }
+        .title_sub {
+            font: 10pt Helvetica;
+            color: darkgray;
+        }
+
+          h2 {
+              font: 18pt Helvetica, arial;
+              color: #3f454b;
+              margin-bottom: 20px;
+          }
+          .span-one-third {
+              padding-left: 10px;
+              padding-right: 10px;
+          }
+          .restaurantname {
+              font: 12pt Helvetica, arial;
+              color: #f45604
+          }
+      </style>
   </head>
 
   <body>
-    <div class="topbar">
-      <div class="fill">
-        <div class="container">
-          <a class="brand" href="#">Buildingly</a>
-          <ul class="nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+    <div class="header_bar">
+        <div style="position:absolute;left:150px;top:70px;">
+        <span class="title_main">BUILDINGLY</span><br />
+        <span class="title_sub">WHAT'S NEAR YOUR BUILDING</span>
         </div>
-      </div>
     </div>
-
     <div class="container">
-
-      <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-      <img src="assets/Buildingly_logo.png" alt="Buildingly" />
-        <h2>What's happening in your building?</h2>
-        <p>You spend 90% of your time in the same two or three places. See what's happening and who's doing what in your building!</p>
-        <p><a class="btn primary large">Get Started &raquo;</a></p>
-      </div>
-
       <!-- Example row of columns -->
       <div class="row">
       
-        <div class="span-one-third">
-          <h2>Food Delivery</h2>
+        <div class="span-one-third" style="border: none;">
+          <h2>DELIVERY NEARBY</h2>
+            <select><option>Food Type</option></select><br /><br />
           <div id="ordr">
             <div id="loadingordr" class="loading"></div>
           </div>
           <p><a class="btn primary large" href="#">View Details &raquo;</a></p>
         </div>
         
-        <div class="span-one-third">
-          <h2>Deals</h2>
+        <div class="span-one-third" style="border: none;">
+          <h2>DEALS NEARBY</h2>
           <div id="yipit">
             <div id="loadingyipit" class="loading"></div>
           </div>
           
        </div>
        
-        <div class="span-one-third">
-          <h2>Social Feed</h2>
+        <div class="span-one-third" style="border: none;">
+          <h2>SOCIAL FEEDS</h2>
           <div id="foursquare">
             <div id="loadingfoursquare" class="loading"></div>
           </div>
