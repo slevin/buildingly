@@ -15,20 +15,6 @@ $postalcode = $resource->address->postalCode;
 $lat = $resource->point->coordinates[0];
 $long = $resource->point->coordinates[1];
 
-//
-//$pathelements = explode('/', parse_url($_SERVER['REQUEST_URI'])['path']);
-//$city = 'New York';
-//$state = 'NY';
-//$address;
-//$pathindex = 3;
-//if ($pathelements.length == $pathindex){
-////show form
-//} else { if ($pathelements.length > $pathindex + 1) {
-//$city = $pathelements[$pathindex];
-//$pathindex++;
-//}
-//$address = $pathelements[$pathindex];
-//}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +30,7 @@ $long = $resource->point->coordinates[1];
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="../bootstrap.css" rel="stylesheet">
+    <link href="bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -98,7 +84,7 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
 
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
-      <img src="../assets/Buildingly_logo.png" alt="Buildingly" />
+      <img src="assets/Buildingly_logo.png" alt="Buildingly" />
         <h2>What's happening in your building?</h2>
         <p>You spend 90% of your time in the same two or three places. See what's happening and who's doing what in your building!</p>
         <p><a class="btn primary large">Get Started &raquo;</a></p>
