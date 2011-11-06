@@ -213,15 +213,16 @@ window.location.href = 'quinkennedy.com/reinventlocal/buildingly/index.php?city=
 </script>
 </head>
 <body style="background-image:url(assets/buildingly_launch_bg.png);">
-<img src="assets/buildingly_launch_box.png" style="display: block;   margin-left: auto;   margin-right: auto;" />
+<div style="display: block;   margin-left: auto;   margin-right: auto; height: 400px; width: 700px; background-image: url(assets/buildingly_launch_box.png); background-repeat: no-repeat">
 
-        <div style="position:absolute; left:400px; top:235px; width: 700px;">
+        <div style="position: relative; left: 70px; top: 235px; width: 700px;">
              <div style="position:relative;">
             <input size="100" class="searchbar" type="text" value="902 Broadway" />&nbsp;
             <button class="searchbutton" style="position:absolute; left: 500px;" onclick="setaddress()"></button>
              </div>
 
         </div>
+</div>
 </body>
 </html>
 <?php
