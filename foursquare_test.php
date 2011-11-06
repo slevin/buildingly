@@ -31,12 +31,13 @@ $event_url = "https://api.foursquare.com/v2/venues/VENUE_ID/events"
 
 */
 
+echo "<ul class=\"fs_list\">";
 foreach($venues_json as $venue) {
     $venue_id = $venue->id;
     $venue_name = $venue->name;
     $venue_url = "https://foursquare.com/v/{$venue_id}";
     $venue_here = "";
-    if (array_key_exists("hereNow", $venue)) {
+    if (property_exists($venue, "hereNow")) {
         $venue_here = $venue->hereNow->count;
     }
     $categories = $venue->categories;
@@ -69,16 +70,16 @@ foreach($venues_json as $venue) {
     $events_html = implode(", ", $event_names);
 
     $foursquare_venue_html = <<<HERE
-<div>
-<img src="{$category_icon}" />
-<a href="${venue_url}">{$venue_name}</a><br/>
-Here Now: {$venue_here}<br/>
-Category: {$category_name}<br/>
-Events: {$events_html}<br/>
-Specials: {$specials_html}
-</div>
+<li>
+<img class="fs_venue_icon" src="{$category_icon}" />
+<a class="fs_venue_link" href="${venue_url}"><span class="fs_venue_name">{$venue_name}<span></a><br/>
+<span class="fs_checkedin_header">Checked In:</span> <span class="fs_checked_in_count">{$venue_here}</span><br/>
+<span class="fs_category_header">Category:</span> <span class="fs_category_title">{$category_name}</span><br/>
+<span class="fs_events_header">Events:</span> <span class="fs_events_list">{$events_html}</span><br/>
+<span class="fs_specials_header">Specials:</span> <span class="fs_specials_list">{$specials_html}</span>
+</li>
 HERE;
-
     echo $foursquare_venue_html;
 }
+echo "</ul>";
 ?>
