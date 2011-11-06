@@ -1,4 +1,15 @@
 <html>
+<head>
+<style>
+tr.menucategory td{font-weight:bold; padding-top:1em;}
+td.menuitemname{padding-left:1em;}
+</style>
+
+<script>
+
+</script>
+
+</head>
 <body>
 <table class="wholemenu">
 <?php
