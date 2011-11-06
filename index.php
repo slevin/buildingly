@@ -131,6 +131,17 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
           .dealbutton {
               background: url('/assets/get_deal_btn.png') no-repeat;
           }
+
+          .fs_li {
+              list-style-type: none;
+              margin-bottom: 10px;
+          }
+
+          .meetup_li {
+              list-style-type: none;
+              margin-bottom: 10px;
+          }
+
       </style>
   </head>
 

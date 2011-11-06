@@ -23,11 +23,15 @@ foreach($events as $event) {
 
     $meetup_date = date("M d Y, h:i a", $event->time / 1000);
     $dt = time();
+    $venue_name = "";
+    if (property_exists($event, "venue")) {
+        $venue_name = $event->venue->name;
+    }
     $meetup_event_html = <<<HERE
-<li>
+<li class="meetup_li">
     <a class="meetup_event_link" href="{$event->event_url}"><span class="meetup_event_name">{$event->name}</span></a><br/>
     <span class="meetup_event_date">{$meetup_date}</span> -
-    <span class="meetup_event_venue">{$event->venue->name}</span><br />
+    <span class="meetup_event_venue">{$venue_name}</span><br />
     <span class="meetup_event_group">{$event->group->name}</span><br />
 </li>
 HERE;
