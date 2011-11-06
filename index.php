@@ -157,7 +157,7 @@ function getlocalinfo(arrLatLon){
         </div>
         <div style="position:absolute; left:400px; top:55px; width: 700px;">
              <div style="position:relative;">
-            <input size="100" class="searchbar" type="text" value="902 Broadway, New York, NY" />&nbsp;
+            <input size="100" class="searchbar" type="text" value="902 Broadway, New York, NY" style="padding-top: 0px"/>&nbsp;
             <button class="searchbutton" style="position:absolute; left: 500px;"></button>
              </div>
 
@@ -217,7 +217,7 @@ window.location.href = 'quinkennedy.com/reinventlocal/buildingly/index.php?city=
 
         <div style="position: relative; left: 70px; top: 235px; width: 700px;">
              <div style="position:relative;">
-            <input size="100" class="searchbar" type="text" value="902 Broadway" />&nbsp;
+            <input size="100" class="searchbar" type="text" value="902 Broadway" style="padding-top: 0px"/>&nbsp;
             <button class="searchbutton" style="position:absolute; left: 500px;" onclick="setaddress()"></button>
              </div>
 
