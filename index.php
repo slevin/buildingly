@@ -175,7 +175,7 @@ function getlocalinfo(arrLatLon){
         <div style="position:absolute;left:130px;top:50px;">
             <img src="/assets/buildingly_logo_new.png">
         </div>
-        <div style="position:absolute; left:400px; top:55px; width: 700px;"
+        <div style="position:absolute; left:400px; top:55px; width: 700px;">
              <div style="position:relative;">
             <input size="100" class="searchbar" type="text" value="902 Broadway, New York, NY" />&nbsp;
             <button class="searchbutton" style="position:absolute; left: 500px;"></button>
