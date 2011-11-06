@@ -77,6 +77,20 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
             color: darkgray;
         }
 
+          h2 {
+              font: 18pt Helvetica, arial;
+              color: #3f454b;
+              margin-bottom: 20px;
+          }
+          .span-one-third {
+              padding-left: 20px;
+              padding-right: 20px;
+          }
+
+          .restaurantname {
+              font: 12pt Helvetica, arial;
+              color: #f45604
+          }
       </style>
   </head>
 
@@ -105,8 +119,9 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
       <!-- Example row of columns -->
       <div class="row">
       
-        <div class="span-one-third">
+        <div class="span-one-third" style="border: none;">
           <h2>DELIVERY NEARBY</h2>
+            <select><option>Food Type</option></select><br /><br />
           <div id="ordr">
             <div id="loadingordr" class="loading"></div>
           </div>
@@ -114,15 +129,15 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
         </div>
         
         <div class="span-one-third" style="border: none;">
-          <h2>Deals</h2>
+          <h2>DEALS NEARBY</h2>
           <div id="yipit">
             <div id="loadingyipit" class="loading"></div>
           </div>
           
        </div>
        
-        <div class="span-one-third">
-          <h2>Social Feed</h2>
+        <div class="span-one-third" style="border: none;">
+          <h2>SOCIAL FEEDS</h2>
           <div id="foursquare">
             <div id="loadingfoursquare" class="loading"></div>
           </div>
