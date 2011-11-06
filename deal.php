@@ -66,10 +66,28 @@ if($_POST){
           }
           .content-main{ width: 940px; margin:0px auto;}
           input,textarea,select{width: 320px;}
+          .openforumtitle a{color: #DF530A}
+          .openforumtitle{padding: 0px;}
+          #nav{margin-bottom: 20px;}
+          .searchbar {
+              width: 530px;
+              background: url('/assets/search_bar.png') no-repeat;
+              height:52px;
+              border:none;
+              font-size: 24px;
+              padding-left: 10px;
+              padding-bottom:6px;
+          }
+          .searchbutton {
+              padding: 0px; 0px; 0px; 0px;
+              width:54px;
+              height: 53px;
+              background:url('/assets/search_button.png') no-repeat;
+          }
       </style>
     <style>
 div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.gif');height:10em; width:10em;background-repeat:no-repeat;}
-div.selectedtab{color:red;}
+div.selectedtab{color: #DF530A}
 div.tabselector{display: inline-block}
 </style>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.js"></script>
@@ -137,11 +155,16 @@ $('#'+type+'content').css('display', '');
 <body onload="init()">
 
 <div class="header_bar">
-        <div style="position:absolute;left:150px;top:70px;">
-        <span class="title_main">BUILDINGLY</span><br />
-        <span class="title_sub">WHAT'S NEAR YOUR BUILDING</span>
+        <div style="position: absolute; left: 130px; top: 50px;">
+            <img src="/assets/buildingly_logo_new.png">
         </div>
-</div>
+        <div style="position: absolute; left: 400px; top: 55px; width: 700px;"><div style="position: relative;">
+            <input type="text" value="902 Broadway, New York, NY" class="searchbar" size="100">&nbsp;
+            <button style="position: absolute; left: 500px;" class="searchbutton"></button>
+             </div>
+
+        </div>
+    </div>
 <div clas="wrapper">
 <div class="content-main">
 <form method="post" action="/deal_post.php">
@@ -187,6 +210,7 @@ $('#'+type+'content').css('display', '');
         <td colspan="2">
         <h3>American Express Open Articles</h3>
 		<div id="openforum">
+		<div id="nav">
 <div id="most-recenttab" class="tabselector" onclick="gototab('most-recent')">
 Most Recent
 </div>
@@ -198,6 +222,7 @@ Most Shared
 </div>
 <div id="most-commentedtab" class="tabselector" onclick="gototab('most-commented')">
 Most Commented
+</div>
 </div>
 <div id="loadingopenforum" class="loading"></div>
 <div id="most-recentcontent" style="display:none"></div>

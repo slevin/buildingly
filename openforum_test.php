@@ -22,13 +22,15 @@ curl_close($ch);
 $data = simplexml_load_string($output);
 
 foreach($data->ReturnItems->Content as $index => $info){
-  echo "<tr class='openforumitem'><td class='openforumtitle'><a href='http://www.openforum.com{$info->LinkUrl}'>$info->Title</a></td>";
+  echo "<tr class='openforumitem'>
+  <td class='openforumtitle'>
+    <a href='http://www.openforum.com{$info->LinkUrl}'>$info->Title</a>
+    ";
   if ($selector == "most-recent"){
-    echo "<td class='openforumtext'> $info->TeaserText </td>";
+    echo "<p class='openforumtext'> $info->TeaserText </p>";
   }
-  echo "</tr>";
+  echo "</td></tr>";
 }
-
 ?>
 </table>
 </body>
