@@ -20,6 +20,9 @@ curl_close($ch);
 $trending_json = json_decode($output);
 // TODO confirm meta->code response is 200
 
+  if($trending_json->meta->code != '200' || empty($trending_json->response->venues)){
+    return;
+  }
 $venues_json = $trending_json->response->venues;
 
 //preg_replace('/%u([a-fA-F0-9]{4})/', '&#x\\1;', $output);

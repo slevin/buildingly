@@ -97,7 +97,6 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
           <div id="foursquare">
             <div id="loadingfoursquare" class="loading"></div>
           </div>
-<hr size=1 />
           <div id="meetup">
             <div id="loadingmeetup" class="loading"></div>
           </div>
