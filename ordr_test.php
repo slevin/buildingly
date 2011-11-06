@@ -10,7 +10,7 @@ preg_replace('/%u([a-fA-F0-9]{4})/', '&#x\\1;', $output);
 curl_close($ch);
 $data = json_decode($output);
 foreach($data as $index => $info){
-  echo "<tr class='restaurantentry'><td><span class='restaurantname'><a href='../seemenu.php?id=$info->id'>$info->na</a></span><br/><span class='restaurantcusine'> ";
+  echo "<tr class='restaurantentry'><td><span class='restaurantname'><a href='seemenu.php?id=$info->id'>$info->na</a></span><br/><span class='restaurantcusine'> ";
   foreach($info->cu as $index => $cuisine){
     if($index > 4){
       break;
