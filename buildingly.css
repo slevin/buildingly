@@ -1,0 +1,5 @@
+#header_bar {
+    height:176px;
+    background-image: url('/assets/header_bar.png');
+    background-repeat: repeat-x;
+}

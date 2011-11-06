@@ -15,7 +15,8 @@ session_start();
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="../bootstrap.css" rel="stylesheet">
+    <link href="/bootstrap.css" rel="stylesheet">
+    <link href="/buldingly.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -49,10 +50,38 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+
+      <style>
+         .header_bar {
+    height:176px;
+    background-image: url('/assets/header_bar.png');
+    background-repeat: repeat-x;
+}       body {
+             background-color: #f5f4ef;
+             margin-top: 0px;
+             padding-top: 0px;
+         }
+        .container {
+            width: 1000px;
+            background-image: url('/assets/content_bg.png');
+            background-repeat: repeat-y;
+            padding-top: 20px;
+        }
+        .title_main {
+            font-family: Helvetica;
+            font-size: 18pt;
+            color: #f45604;
+        }
+        .title_sub {
+            font: 10pt Helvetica;
+            color: darkgray;
+        }
+
+      </style>
   </head>
 
   <body>
-
+  <!--
     <div class="topbar">
       <div class="fill">
         <div class="container">
@@ -65,29 +94,26 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
         </div>
       </div>
     </div>
-
+    -->
+    <div class="header_bar">
+        <div style="position:absolute;left:150px;top:70px;">
+        <span class="title_main">BUILDINGLY</span><br />
+        <span class="title_sub">WHAT'S NEAR YOUR BUILDING</span>
+        </div>
+    </div>
     <div class="container">
-
-      <!-- Main hero unit for a primary marketing message or call to action -->
-      <div class="hero-unit">
-      <img src="../assets/Buildingly_logo.png" alt="Buildingly" />
-        <h2>What's happening in your building?</h2>
-        <p>You spend 90% of your time in the same two or three places. See what's happening and who's doing what in your building!</p>
-        <p><a class="btn primary large">Get Started &raquo;</a></p>
-      </div>
-
       <!-- Example row of columns -->
       <div class="row">
       
         <div class="span-one-third">
-          <h2>Food Delivery</h2>
+          <h2>DELIVERY NEARBY</h2>
           <div id="ordr">
             <div id="loadingordr" class="loading"></div>
           </div>
           <p><a class="btn primary large" href="#">View Details &raquo;</a></p>
         </div>
         
-        <div class="span-one-third">
+        <div class="span-one-third" style="border: none;">
           <h2>Deals</h2>
           <div id="yipit">
             <div id="loadingyipit" class="loading"></div>
