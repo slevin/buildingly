@@ -18,7 +18,29 @@
         padding-top: 60px;
       }
     </style>
+    <style>
+div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.gif');height:10em; width:10em;background-repeat:no-repeat;}
+</style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.js"></script>
+	<script>
+			$(function(){
+					$.ajax({url:"/foursquare_test.php", 
+					dataType:'html',
+					success:function(data){$('#foursquare').append(data); $('#loadingfoursquare').css('display', 'none');}});
 
+					$.ajax({url:"/yipit_test.php", 
+					dataType:'html',
+					success:function(data){$('#yipit').append(data); $('#loadingyipit').css('display', 'none');}});
+
+					$.ajax({url:"/ordr_test.php", 
+					dataType:'html',
+					success:function(data){$('#ordr').append(data); $('#loadingordr').css('display', 'none');}});
+
+					$.ajax({url:"/openforum_test.php", 
+					dataType:'html',
+					success:function(data){$('#openforum').append(data); $('#loadingopenforum').css('display', 'none');}});
+			});
+		</script>
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -56,34 +78,25 @@
       
         <div class="span-one-third">
           <h2>Food Delivery</h2>
-          <p>Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+          <div id="ordr">
+            <div id="loadingordr" class="loading"></div>
+          </div>
           <p><a class="btn primary large" href="#">View Details &raquo;</a></p>
         </div>
         
         <div class="span-one-third">
           <h2>Deals</h2>
-          
-          <h3>Deal Title</h3>
-          
-          <h4>Business Name</h4>
-          <p>Street Address</p>
-           
-           <h4>$4.99</h4>
-           
-           <div align="left" style="border:1px solid black">Worth: $14.99  |  Discount: 67%  |  Savings: $10</div>
-           
-           <br/>
-           
-          <div align="right"<p><a class="btn primary large" href="#">Grab it! &raquo;</a></p></div>
-          <div align="right" style="border:1px black">Time left: 1hr <br/></div>
+          <div id="yipit">
+            <div id="loadingyipit" class="loading"></div>
+          </div>
           
        </div>
        
         <div class="span-one-third">
           <h2>Social Feed</h2>
-          <h3>Facebook</h3>
-          <p>News Feed News Feed News Feed News Feed News Feed News Feed News Feed News Feed News Feed News Feed </p>
-          <p><a class="btn primary large" href="#">See more &raquo;</a></p>
+          <div id="foursquare">
+            <div id="loadingfoursquare" class="loading"></div>
+          </div>
         </div>
       </div>
 
