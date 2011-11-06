@@ -1,20 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Buildingly</title>
+    <meta name="description" content="buildingly">
+    <meta name="author" content="buildingly">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+      }
+    </style>
+    <style>
+div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.gif');height:10em; width:10em;background-repeat:no-repeat;}
+</style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.js"></script>
 <?php
 session_start();
-$address = isset($_GET['address']) && $_GET['address'] != '' ? $_GET['address'] : '902 Broadway';
-$city = isset($_GET['city']) && $_GET['city'] != '' ? $_GET['city'] : 'New York';
+$address = isset($_GET['address']) ? $_GET['address'] : '';
+$city = isset($_GET['city']) ? $_GET['city'] : 'New York';
 
-$vars = rawurlencode($address.' '.$city.' NY');
-$ch = curl_init("http://dev.virtualearth.net/REST/v1/Locations/{$vars}?o=json&key=Astz1QZHF2CCNpI6aMVIXtchjBuAUIXTt2PBlI7UrMPbsNoousBCc_bXtYR_40cb");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$output = curl_exec($ch);
-preg_replace('/%u([a-fA-F0-9]{4})/', '&#x\\1;', $output);
-curl_close($ch);
-$data = json_decode($output);
-$resource = $data->resourceSets[0]->resources[0];
-$postalcode = $resource->address->postalCode;
-$lat = $resource->point->coordinates[0];
-$long = $resource->point->coordinates[1];
-
+if ($address != ''):
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,11 +56,17 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.js"></script>
 	<script>
 			$(function(){
-					$.ajax({url:"foursquare_test.php?lat=<?php echo $lat; ?>&long=<?php echo $long; ?>", 
+                                        $.ajax({url:"bing_test.php?address=<?php echo $address; ?>&city=<?php echo $city; ?>",
+                                        dataType:'text',
+                                        success:function(data){getlocalinfo(data.split(':'));}});
+			});
+
+function getlocalinfo(arrLatLon){
+					$.ajax({url:"foursquare_test.php?lat="+arrLatLon[0]+"&long="+arrLatLon[1], 
 					dataType:'html',
 					success:function(data){$('#foursquare').append(data); $('#loadingfoursquare').css('display', 'none');}});
 
-					$.ajax({url:"yipit_test.php?lat=<?php echo $lat; ?>&long=<?php echo $long; ?>",
+					$.ajax({url:"yipit_test.php?lat="+arrLatLon[0]+"&long="+arrLatLon[1],
 					dataType:'html',
 					success:function(data){$('#yipit').append(data); $('#loadingyipit').css('display', 'none');}});
 
@@ -55,10 +74,10 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
 					dataType:'html',
 					success:function(data){$('#ordr').append(data); $('#loadingordr').css('display', 'none');}});
 
-					$.ajax({url:"meetup_test.php?lat=<?php echo $lat; ?>&long=<?php echo $long; ?>",
+					$.ajax({url:"meetup_test.php?lat="+arrLatLon[0]+"&long="+arrLatLon[1],
 					dataType:'html',
 					success:function(data){$('#meetup').append(data); $('#loadingmeetup').css('display', 'none');}});
-			});
+}
 		</script>
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -198,3 +217,23 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
 
   </body>
 </html>
+<?php
+else:
+?>
+<script>
+function setaddress(){
+window.location.href = 'quinkennedy.com/reinventlocal/buildingly/index.php?city=new%20york&address='+rawurlencode($.('#address').value);
+}
+</script>
+</head>
+<body style="background-image:url(assets/buildingly_launch_bg.png);">
+<div id="entry">
+<!--<img src="assets/buildingly_launch_box.png" />-->
+<input class="searchbar" type=text id="address" />
+<button class="searchbutton" style="position:absolute;" onclick="setaddress()" />
+</div>
+</body>
+</html>
+<?php
+endif;
+?>
