@@ -18,7 +18,7 @@
         padding-top: 60px;
       }
     </style>
-
+	
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
