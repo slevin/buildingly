@@ -61,7 +61,7 @@ class yipitRequest extends request{
           <img 
           <div align="left" style="border:1px solid black">Worth: {$deal->value->formatted} | Price: {$deal->price->formatted} | Discount: {$deal->discount->formatted}</div>
           <br/>
-          <div align="right"<p><a class="btn primary large" href="{$deal->url}">Grab it! &raquo;</a></p></div>
+          <div align="right"<p><a class="btn primary large" style="background: url('/assets/get_deal_btn.png') no-repeat; width:125px; height:35px;border:none;" href="{$deal->url}"></a></p></div>
           <div align="right" style="border:1px black">Time left: {$days_remaining} days, {$hours_remaining} hours<br/></div>
 EOT;
 		$i++;

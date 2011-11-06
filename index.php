@@ -101,18 +101,50 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
               padding-left: 10px;
               padding-right: 10px;
           }
+          a {
+              color:#f45604;
+          }
           .restaurantname {
+              margin-top: 5px;
+              margin-bottom: 5px;
               font: 12pt Helvetica, arial;
               color: #f45604
+          }
+
+          .searchbar {
+              width: 530px;
+              background: url('/assets/search_bar.png') no-repeat;
+              height:52px;
+              border:none;
+              font-size: 24px;
+              padding-left: 10px;
+              padding-bottom:6px;
+          }
+          .searchbutton {
+              padding: 0px; 0px; 0px; 0px;
+              width:54px;
+              height: 53px;
+              background:url('/assets/search_button.png') no-repeat;
+          }
+
+
+          .dealbutton {
+              background: url('/assets/get_deal_btn.png') no-repeat;
           }
       </style>
   </head>
 
   <body>
     <div class="header_bar">
-        <div style="position:absolute;left:150px;top:70px;">
-        <span class="title_main">BUILDINGLY</span><br />
-        <span class="title_sub">WHAT'S NEAR YOUR BUILDING</span>
+        <div style="position:absolute;left:130px;top:50px;">
+            <img src="/assets/buildingly_logo_new.png">
+        </div>
+        <div style="position:absolute; left:400px; top:55px; width: 700px;"
+             <div style="position:relative;">
+            <input size="100" class="searchbar" type="text" value="902 Broadway, New York, NY" />&nbsp;
+            <button class="searchbutton" style="position:absolute; left: 500px;"></button>
+             </div>
+
         </div>
     </div>
     <div class="container">
@@ -120,12 +152,12 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
       <div class="row">
       
         <div class="span-one-third" style="border: none;">
+
           <h2>DELIVERY NEARBY</h2>
             <select><option>Food Type</option></select><br /><br />
           <div id="ordr">
             <div id="loadingordr" class="loading"></div>
           </div>
-          <p><a class="btn primary large" href="#">View Details &raquo;</a></p>
         </div>
         
         <div class="span-one-third" style="border: none;">
