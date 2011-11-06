@@ -30,12 +30,8 @@ $long = $resource->point->coordinates[1];
     <![endif]-->
 
     <!-- Le styles -->
-<<<<<<< HEAD
     <link href="/bootstrap.css" rel="stylesheet">
     <link href="/buldingly.css" rel="stylesheet">
-=======
-    <link href="bootstrap.css" rel="stylesheet">
->>>>>>> d1335a85a6fa29cb07f21db51cc56d35c0ad50be
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -102,10 +98,9 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
               margin-bottom: 20px;
           }
           .span-one-third {
-              padding-left: 20px;
-              padding-right: 20px;
+              padding-left: 10px;
+              padding-right: 10px;
           }
-
           .restaurantname {
               font: 12pt Helvetica, arial;
               color: #f45604
