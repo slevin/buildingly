@@ -1,7 +1,6 @@
 <?php
-
-$lat = "40.7391874";
-$lon = "-73.9897746";
+$lat = isset($_GET['lat']) && $_GET['lat'] != '' ? $_GET['lat'] : '40.7391874';
+$lon = isset($_GET['long']) && $_GET['long'] != '' ? $_GET['long'] : '-73.9897746';
 
 $fs_client_id = "YECXLIILUHH0AMSLGCWKLVKJDZMA30YKLI3ZMSI0KQGNKUBV";
 $fs_client_secret = "HZNC0M4RZAEEOJ1PO2L0H31XNKKE1YVFWF0DF1EBJQWM1BNL";

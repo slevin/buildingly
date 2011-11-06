@@ -1,5 +1,20 @@
-<?php 
+<?php
 session_start();
+$address = isset($_GET['address']) && $_GET['address'] != '' ? $_GET['address'] : '902 Broadway';
+$city = isset($_GET['city']) && $_GET['city'] != '' ? $_GET['city'] : 'New York';
+
+$vars = rawurlencode($address.' '.$city.' NY');
+$ch = curl_init("http://dev.virtualearth.net/REST/v1/Locations/{$vars}?o=json&key=Astz1QZHF2CCNpI6aMVIXtchjBuAUIXTt2PBlI7UrMPbsNoousBCc_bXtYR_40cb");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$output = curl_exec($ch);
+preg_replace('/%u([a-fA-F0-9]{4})/', '&#x\\1;', $output);
+curl_close($ch);
+$data = json_decode($output);
+$resource = $data->resourceSets[0]->resources[0];
+$postalcode = $resource->address->postalCode;
+$lat = $resource->point->coordinates[0];
+$long = $resource->point->coordinates[1];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +30,12 @@ session_start();
     <![endif]-->
 
     <!-- Le styles -->
+<<<<<<< HEAD
     <link href="/bootstrap.css" rel="stylesheet">
     <link href="/buldingly.css" rel="stylesheet">
+=======
+    <link href="bootstrap.css" rel="stylesheet">
+>>>>>>> d1335a85a6fa29cb07f21db51cc56d35c0ad50be
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -28,11 +47,11 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.js"></script>
 	<script>
 			$(function(){
-					$.ajax({url:"foursquare_test.php", 
+					$.ajax({url:"foursquare_test.php?lat=<?php echo $lat; ?>&long=<?php echo $long; ?>", 
 					dataType:'html',
 					success:function(data){$('#foursquare').append(data); $('#loadingfoursquare').css('display', 'none');}});
 
-					$.ajax({url:"yipit_test.php", 
+					$.ajax({url:"yipit_test.php?lat=<?php echo $lat; ?>&long=<?php echo $long; ?>",
 					dataType:'html',
 					success:function(data){$('#yipit').append(data); $('#loadingyipit').css('display', 'none');}});
 
@@ -40,7 +59,7 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
 					dataType:'html',
 					success:function(data){$('#ordr').append(data); $('#loadingordr').css('display', 'none');}});
 
-					$.ajax({url:"meetup_test.php", 
+					$.ajax({url:"meetup_test.php?lat=<?php echo $lat; ?>&long=<?php echo $long; ?>",
 					dataType:'html',
 					success:function(data){$('#meetup').append(data); $('#loadingmeetup').css('display', 'none');}});
 			});
@@ -95,20 +114,6 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
   </head>
 
   <body>
-  <!--
-    <div class="topbar">
-      <div class="fill">
-        <div class="container">
-          <a class="brand" href="#">Buildingly</a>
-          <ul class="nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    -->
     <div class="header_bar">
         <div style="position:absolute;left:150px;top:70px;">
         <span class="title_main">BUILDINGLY</span><br />

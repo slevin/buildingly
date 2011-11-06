@@ -26,7 +26,7 @@ $('#'+selectedtab+'content').css('display', '');
 function getforum(type){
 $('#openforumcontent').html('');
 $('#loadingopenforum').css('display', '');
-$.ajax({url:"../openforum_test.php?type="+type,
+$.ajax({url:"/penforum_test.php?type="+type,
 dataType:'html',
 success:function(data){filldiv(data);}});
 }
@@ -40,7 +40,7 @@ setTimeout('callajax("most-shared")',3000);
 			}
 
 function callajax(type){
-$.ajax({url:"../openforum_test.php?type="+type,
+$.ajax({url:"openforum_test.php?type="+type,
 dataType:'html',
 success:function(data){filldiv(data, type);}});
 }
