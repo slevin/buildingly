@@ -1,4 +1,5 @@
 <?php
+session_start();
 $address = isset($_GET['address']) && $_GET['address'] != '' ? $_GET['address'] : '902 Broadway';
 $city = isset($_GET['city']) && $_GET['city'] != '' ? $_GET['city'] : 'New York';
 
@@ -29,7 +30,6 @@ $long = $resource->point->coordinates[1];
 //$address = $pathelements[$pathindex];
 //}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -56,19 +56,19 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.js"></script>
 	<script>
 			$(function(){
-					$.ajax({url:"../foursquare_test.php?lat=<?php echo $lat; ?>&long=<?php echo $long; ?>", 
+					$.ajax({url:"foursquare_test.php?lat=<?php echo $lat; ?>&long=<?php echo $long; ?>", 
 					dataType:'html',
 					success:function(data){$('#foursquare').append(data); $('#loadingfoursquare').css('display', 'none');}});
 
-					$.ajax({url:"../yipit_test.php?lat=<?php echo $lat; ?>&long=<?php echo $long; ?>", 
+					$.ajax({url:"yipit_test.php?lat=<?php echo $lat; ?>&long=<?php echo $long; ?>",
 					dataType:'html',
 					success:function(data){$('#yipit').append(data); $('#loadingyipit').css('display', 'none');}});
 
-					$.ajax({url:"../ordr_test.php", 
+					$.ajax({url:"ordr_test.php", 
 					dataType:'html',
 					success:function(data){$('#ordr').append(data); $('#loadingordr').css('display', 'none');}});
 
-					$.ajax({url:"../meetup_test.php?lat=<?php echo $lat; ?>&long=<?php echo $long; ?>", 
+					$.ajax({url:"meetup_test.php?lat=<?php echo $lat; ?>&long=<?php echo $long; ?>",
 					dataType:'html',
 					success:function(data){$('#meetup').append(data); $('#loadingmeetup').css('display', 'none');}});
 			});
@@ -128,7 +128,6 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
           <div id="foursquare">
             <div id="loadingfoursquare" class="loading"></div>
           </div>
-<hr size=1 />
           <div id="meetup">
             <div id="loadingmeetup" class="loading"></div>
           </div>
