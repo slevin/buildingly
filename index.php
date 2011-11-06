@@ -27,7 +27,7 @@ session_start();
 $address = isset($_GET['address']) ? $_GET['address'] : '';
 $city = isset($_GET['city']) ? $_GET['city'] : 'New York';
 
-if ($address != ''):
+if ($address == ''):
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -161,6 +161,12 @@ function getlocalinfo(arrLatLon){
               margin-bottom: 10px;
           }
 
+          .fs_venue_name {
+              font: 12pt Helvetica, arial;
+          }
+          .meetup_event_name {
+              font: 12pt Helvetica, arial;
+          }
       </style>
   </head>
 

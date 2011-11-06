@@ -43,6 +43,7 @@ class yipitRequest extends request{
 	$data = $request->getResponse('obj');
 	$deals = $data->response->deals;
 	$i = 0;
+date_default_timezone_set("America/New_York");
 
 	foreach($deals as $deal){
 	//print_r($deal);
@@ -52,17 +53,20 @@ class yipitRequest extends request{
 	  $remaining = round((($end_time - time())/60)/60);
 	  $hours_remaining = $remaining % 24;
 	  $days_remaining = floor($remaining/24);
-	  
+	  $image = empty($deal->images->image_small) ? '' : '<img src="'.$deal->images->image_small.'"/><br />';
  	  echo <<<EOT
-   		<h3><a href="{$deal->url}">{$deal->title}</a></h3>
-          <p class="bname">{$deal->business->name}</hp>
-          <p>{$deal->business->locations[0]->address} {$deal->business->locations[0]->locality} {$deal->business->locations[0]->state}, {$deal->business->locations[0]->zip_code}</p>
-          <p>{$deal->price->formatted}</h4>
+ 	  {$image}
+   	<a style="font: 12pt Helvetica, arial;" href="{$deal->url}">{$deal->title}</a>
+          <p style="margin-bottom: 2px;" class="bname">{$deal->business->name}</p>
+          <p style="margin-bottom: 2px;">{$deal->business->locations[0]->address} {$deal->business->locations[0]->locality} {$deal->business->locations[0]->state}, {$deal->business->locations[0]->zip_code}</p>
+          <p>Price: {$deal->price->formatted}</p>
           <img 
           <div align="left" style="border:1px solid black">Worth: {$deal->value->formatted} | Price: {$deal->price->formatted} | Discount: {$deal->discount->formatted}</div>
           <br/>
-          <div align="right"<p><a class="btn primary large" style="background: url('/assets/get_deal_btn.png') no-repeat; width:125px; height:35px;border:none;" href="{$deal->url}"></a></p></div>
-          <div align="right" style="border:1px black">Time left: {$days_remaining} days, {$hours_remaining} hours<br/></div>
+          <div align="left" style="border:1px black">Time left: {$days_remaining} days, {$hours_remaining} hours<br/></div>
+          <div align="left"<p><a class="btn primary large" style="margin-top: 10px;background: url('/assets/get_deal_btn.png') no-repeat; width:125px; height:35px;border:none;" href="{$deal->url}"></a></p>
+          </div>
+          <br />
 EOT;
 		$i++;
 	}
