@@ -35,6 +35,10 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
 					$.ajax({url:"../ordr_test.php", 
 					dataType:'html',
 					success:function(data){$('#ordr').append(data); $('#loadingordr').css('display', 'none');}});
+
+					$.ajax({url:"../meetup_test.php", 
+					dataType:'html',
+					success:function(data){$('#meetup').append(data); $('#loadingmeetup').css('display', 'none');}});
 			});
 		</script>
     <!-- Le fav and touch icons -->
@@ -92,6 +96,10 @@ div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.
           <h2>Social Feed</h2>
           <div id="foursquare">
             <div id="loadingfoursquare" class="loading"></div>
+          </div>
+<hr size=1 />
+          <div id="meetup">
+            <div id="loadingmeetup" class="loading"></div>
           </div>
         </div>
       </div>
