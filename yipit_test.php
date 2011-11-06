@@ -1,4 +1,6 @@
 <?php
+$lat = isset($_GET['lat']) && $_GET['lat'] != '' ? $_GET['lat'] : '40.7391874';
+$long = isset($_GET['long']) && $_GET['long'] != '' ? $_GET['long'] : '-73.9897746';
 
 class request{	
 	protected $url;
@@ -37,7 +39,7 @@ class yipitRequest extends request{
 }
 
 
-$request = new yipitRequest("http://api.yipit.com/v1/deals/?key=SyfdMvpxgqA8tmSm&lat=40.7391874&lon=-73.9897746");
+$request = new yipitRequest("http://api.yipit.com/v1/deals/?key=SyfdMvpxgqA8tmSm&lat={$lat}&lon={$long}");
 $data = $request->getResponse('obj');
 $deals = $data->response->deals;
 
