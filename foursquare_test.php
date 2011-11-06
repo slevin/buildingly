@@ -58,6 +58,7 @@ foreach($venues_json as $venue) {
         }
     }
     $specials_html = implode("\n", $special_messages);
+    /*
     $events_url = "https://api.foursquare.com/v2/venues/{$venue_id}/events?{$fs_client_param}";
     $fs_events_curl = curl_init($events_url);
     curl_setopt($fs_events_curl, CURLOPT_RETURNTRANSFER, 1);
@@ -70,15 +71,16 @@ foreach($venues_json as $venue) {
         $event_names[] = $event->name;
     }
     $events_html = implode(", ", $event_names);
-
+*/
+    $events_html = "";
     $foursquare_venue_html = <<<HERE
-<li>
+<li class="fs_li">
 <img class="fs_venue_icon" src="{$category_icon}" />
 <a class="fs_venue_link" href="${venue_url}"><span class="fs_venue_name">{$venue_name}<span></a><br/>
 <span class="fs_checkedin_header">Checked In:</span> <span class="fs_checked_in_count">{$venue_here}</span><br/>
 <span class="fs_category_header">Category:</span> <span class="fs_category_title">{$category_name}</span><br/>
-<span class="fs_events_header">Events:</span> <span class="fs_events_list">{$events_html}</span><br/>
-<span class="fs_specials_header">Specials:</span> <span class="fs_specials_list">{$specials_html}</span>
+<!-- <span class="fs_events_header">Events:</span> <span class="fs_events_list">{$events_html}</span><br/> -->
+<!-- <span class="fs_specials_header">Specials:</span> <span class="fs_specials_list">{$specials_html}</span> -->
 </li>
 HERE;
     echo $foursquare_venue_html;
