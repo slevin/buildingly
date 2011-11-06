@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.js"></script>
+		<script>
+			function init(){
+					$.ajax({url:"http://quinkennedy.com/reinventlocal/foursquare_test.php", 
+					dataType:'html',
+					success:function(data){$('#foursquare').append(data);}});
+					$.ajax({url:"http://quinkennedy.com/reinventlocal/yipit_test.php", 
+					dataType:'html',
+					success:function(data){$('#yipit').append(data);}});
+
+					$.ajax({url:"http://quinkennedy.com/reinventlocal/ordr_test.php", 
+					dataType:'html',
+					success:function(data){$('#ordr').append(data);}});
+
+					$.ajax({url:"http://quinkennedy.com/reinventlocal/openforum_test.php", 
+					dataType:'html',
+					success:function(data){$('#openforum').append(data);}});
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<div id="foursquare">
+		</div>
+		<div id="ordr">
+		</div>
+		<div id="openforum">
+		</div>
+		<div id="yipit">
+		</div>
+	</body>
+</html>
