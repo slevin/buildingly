@@ -1,8 +1,8 @@
 <?php
 if($_POST){
 	session_start();
-	print_r($_POST);
-	
+	//print_r($_POST);
+	$_SESSION['deal'] = $_POST['deal'];
 }
 ?>
 <html>
@@ -25,6 +25,48 @@ if($_POST){
         padding-top: 60px;
       }
     </style>
+    <style>
+         .header_bar {
+    height:176px;
+    background-image: url('/assets/header_bar.png');
+    background-repeat: repeat-x;
+}       body {
+             background-color: #f5f4ef;
+             margin-top: 0px;
+             padding-top: 0px;
+         }
+        .container {
+            width: 1000px;
+            background-image: url('/assets/content_bg.png');
+            background-repeat: repeat-y;
+            padding-top: 20px;
+        }
+        .title_main {
+            font-family: Helvetica;
+            font-size: 18pt;
+            color: #f45604;
+        }
+        .title_sub {
+            font: 10pt Helvetica;
+            color: darkgray;
+        }
+
+          h2 {
+              font: 18pt Helvetica, arial;
+              color: #3f454b;
+              margin-bottom: 20px;
+          }
+          .span-one-third {
+              padding-left: 10px;
+              padding-right: 10px;
+          }
+          .restaurantname {
+              font: 12pt Helvetica, arial;
+              color: #f45604
+          }
+          .content-main{ width: 940px; margin:0px auto;}
+          input,textarea,select{width: 320px;}
+      </style>
     <style>
 div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.gif');height:10em; width:10em;background-repeat:no-repeat;}
 div.selectedtab{color:red;}
@@ -94,14 +136,18 @@ $('#'+type+'content').css('display', '');
 
 <body onload="init()">
 
-<div>Buldingly</div>
-<div>Welcome Back, Albert's Deli</div>
-<div>Profile Page | Deal Page</div>
-
+<div class="header_bar">
+        <div style="position:absolute;left:150px;top:70px;">
+        <span class="title_main">BUILDINGLY</span><br />
+        <span class="title_sub">WHAT'S NEAR YOUR BUILDING</span>
+        </div>
+</div>
+<div clas="wrapper">
+<div class="content-main">
 <form method="post" action="/deal_post.php">
 <table>
     <tr>
-        <td>
+        <td width="450px">
             <div>
         What deal would you like to offer?<br />
             <textarea rows="5" cols="50" id="desc" name="desc">
@@ -134,22 +180,12 @@ $('#'+type+'content').css('display', '');
 
         <td>
             <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Deli+near+902+Broadway,+New+York,+NY&amp;aq=0&amp;sll=37.926868,-95.712891&amp;sspn=51.910431,77.34375&amp;vpsrc=0&amp;ie=UTF8&amp;hq=Deli&amp;hnear=902+Broadway,+New+York,+10010&amp;t=m&amp;ll=40.731519,-73.980753&amp;spn=0.006295,0.006295&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Deli+near+902+Broadway,+New+York,+NY&amp;aq=0&amp;sll=37.926868,-95.712891&amp;sspn=51.910431,77.34375&amp;vpsrc=0&amp;ie=UTF8&amp;hq=Deli&amp;hnear=902+Broadway,+New+York,+10010&amp;t=m&amp;ll=40.731519,-73.980753&amp;spn=0.006295,0.006295" style="color:#0000FF;text-align:left">View Larger Map</a></small>
-
-            <div>
-            Select radius for your deal:<br />
-            <select>
-                <option>1/4 mile</option>
-                <option>1/2 mile</option>
-                <option>1 mile</option>
-                <option>3 miles</option>
-                <option>Select Using Map</option>
-            </select>
-            </div>
-
             
         </td>
-
-        <td>
+</tr>
+        <tr>
+        <td colspan="2">
+        <h3>American Express Open Articles</h3>
 		<div id="openforum">
 <div id="most-recenttab" class="tabselector" onclick="gototab('most-recent')">
 Most Recent
@@ -175,6 +211,8 @@ Most Commented
     </tr>
 </table>
 </form>
+</div>
+</div>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 <body>
 
 
-<table class="openforum"><tr class="openforumheader"><td>Title</td></tr>
+<table class="openforum"><tr class="openforumheader"></tr>
 <?php
 $selector = $_GET["type"];
 switch($selector){
@@ -20,6 +20,7 @@ $output = curl_exec($ch);
 preg_replace('/%u([a-fA-F0-9]{4})/', '&#x\\1;', $output);
 curl_close($ch);
 $data = simplexml_load_string($output);
+
 foreach($data->ReturnItems->Content as $index => $info){
   echo "<tr class='openforumitem'><td class='openforumtitle'><a href='http://www.openforum.com{$info->LinkUrl}'>$info->Title</a></td>";
   if ($selector == "most-recent"){
