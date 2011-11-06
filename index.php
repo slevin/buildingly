@@ -114,7 +114,7 @@ session_start();
 $address = isset($_GET['address']) ? $_GET['address'] : '';
 $city = isset($_GET['city']) ? $_GET['city'] : 'New York';
 
-if ($address == ''):
+if ($address != ''):
 ?>
 	<script>
 			$(function(){
@@ -157,7 +157,7 @@ function getlocalinfo(arrLatLon){
         </div>
         <div style="position:absolute; left:400px; top:55px; width: 700px;">
              <div style="position:relative;">
-            <input size="100" class="searchbar" type="text" value="902 Broadway, New York, NY" />&nbsp;
+	     <input size="100" class="searchbar" type="text" value="<?php echo $address; ?>" />&nbsp;
             <button class="searchbutton" style="position:absolute; left: 500px;"></button>
              </div>
 
@@ -208,7 +208,7 @@ else:
 ?>
 <script>
 function setaddress(){
-window.location.href = 'quinkennedy.com/reinventlocal/buildingly/index.php?city=new%20york&address='+rawurlencode($.('#address').value);
+window.location.href = 'index.php?city=new%20york&address='+escape($('#address').val());
 }
 </script>
 </head>
