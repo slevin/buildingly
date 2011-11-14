@@ -15,6 +15,7 @@ $events = $meetup_json->results;
 
 date_default_timezone_set("America/New_York");
 
+if(is_object($events)){
 echo "<ul class=\"meetup_list\">";
 foreach($events as $event) {
     /*
@@ -39,4 +40,5 @@ HERE;
     echo $meetup_event_html;
 }
 echo "</ul>";
+}
 ?>
