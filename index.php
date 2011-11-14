@@ -5,6 +5,9 @@ $city = isset($_POST['city']) ? htmlentities($_POST['city']) : 'New York';
 if(!isset($_SESSION['address'])){
   $_SESSION['address'] = $address;
 }
+if($_POST){
+	header('Location: /');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
