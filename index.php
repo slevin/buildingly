@@ -1,8 +1,10 @@
 <?php
 session_start();
-$address = isset($_GET['address']) ? htmlentities($_GET['address']) : '';
-
-$city = isset($_GET['city']) ? htmlentities($_GET['city']) : 'New York';
+$address = isset($_POST['address']) ? htmlentities($_POST['address']) : '';
+$city = isset($_POST['city']) ? htmlentities($_POST['city']) : 'New York';
+if(!isset($_SESSION['address'])){
+  $_SESSION['address'] = $address;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,14 +27,14 @@ $city = isset($_GET['city']) ? htmlentities($_GET['city']) : 'New York';
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
   </head>
   
-<?php if ($address != ''):?>
+<?php if (isset($_SESSION['address'])):?>
   <body>
     <div class="header_bar">
         <a id="logo" href="/"></a>
         <div style="position:absolute; left:400px; top:55px; width: 700px;">
           <div style="position:relative;">
             <form id="mainpagesearchform">
-              <input size="100" class="searchbar" name="address" id="address" type="text" value="<?php echo $address; ?>"/>
+              <input size="100" class="searchbar" name="address" id="address" type="text" value="<?php echo $_SESSION['address']; ?>"/>
               <button class="searchbutton deals" type="submit"></button>
             </form>
           </div>

@@ -1,8 +1,8 @@
 $(function(){
-	var address= getURLParam('address');
-	var city = getURLParam('city');
+	var address = $('#address').val();
+	var city = 'New York';
 	var url = "bing_test.php?address="+address+"&city="+city;
-	
+
     $.ajax({url: url,
     dataType:'text',
     success:function(data){getlocalinfo(data.split(':'));}});
