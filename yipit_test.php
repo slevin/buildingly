@@ -38,8 +38,8 @@ class yipitRequest extends request{
 	}
 }
 
-
-	$request = new yipitRequest("http://api.yipit.com/v1/deals/?key=SyfdMvpxgqA8tmSm&lat={$lat}&lon={$long}");
+	$key = 'Wggk8KqvnuC6af4m';
+	$request = new yipitRequest("http://api.yipit.com/v1/deals/?key={$key}&lat={$lat}&lon={$long}");
 	$data = $request->getResponse('obj');
 	$deals = $data->response->deals;
 	$i = 0;
