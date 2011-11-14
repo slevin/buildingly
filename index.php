@@ -74,7 +74,7 @@ if(!isset($_SESSION['address'])){
   </body>
 <?php else: ?>
   <body class="searchpage">
-	<form method="get" action="/" id="addressSearch">
+	<form method="post" action="/" id="addressSearch">
 	  <div style="position: relative; left: 70px; top: 235px; width: 700px;">
 	    <input id="address" name="address" size="100" class="searchbar" type="text" value="902 Broadway" />
 	    <input type="hidden" name="city" value="New York" />
