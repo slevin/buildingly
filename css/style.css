@@ -1,0 +1,125 @@
+body{
+	padding-top: 60px;
+	background-color: #f5f4ef;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+a{
+    color:#f45604;
+}
+
+h2{
+    font: 18pt Helvetica, arial;
+    color: #3f454b;
+    margin-bottom: 20px;
+}
+
+.header_bar {
+    height:176px;
+    background-image: url('/assets/header_bar.png');
+    background-repeat: repeat-x;
+}
+
+.container {
+    width: 1000px;
+    background-image: url('/assets/content_bg.png');
+    background-repeat: repeat-y;
+    padding-top: 20px;
+}
+.title_main {
+    font-family: Helvetica;
+    font-size: 18pt;
+    color: #f45604;
+}
+.title_sub {
+    font: 10pt Helvetica;
+    color: darkgray;
+}
+
+
+.span-one-third {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.restaurantname {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font: 12pt Helvetica, arial;
+    color: #f45604
+}
+
+.searchbar {
+    width: 529px;
+    background: url('/assets/search_bar.png') no-repeat;
+    height:51px;
+    border:none;
+    font-size: 24px;
+    padding-left: 10px;
+    padding-bottom:6px;
+    padding-top: 0px;
+}
+.searchbutton {
+    padding: 0px 0px 0px 0px;
+    width:54px;
+    height: 53px;
+    background:url('/assets/search_button.png') no-repeat;
+    position:absolute;
+    left: 490px;
+}
+
+
+.dealbutton {
+    background: url('/assets/get_deal_btn.png') no-repeat;
+}
+
+.fs_li, .meetup_li {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.fs_venue_name, .meetup_event_name {
+    font: 12pt Helvetica, arial;
+}
+
+div.loading{background-image:url('http://www.careeravenues.in/Images/loadingGIF.gif');height:10em; width:10em;background-repeat:no-repeat;}
+
+#header_bar {
+    height:176px;
+    background-image: url('/assets/header_bar.png');
+    background-repeat: repeat-x;
+}
+
+#yipit>h3{line-height: 20px}
+
+h4.bname{font-size: 15px;}
+
+#addressSearch{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10%;
+	height: 400px;
+	width: 700px;
+	background-image: url(/assets/buildingly_launch_box.png);
+	background-repeat: no-repeat;
+}
+
+.searchpage{background-image:url(/assets/buildingly_launch_bg.png);}
+
+#logo{
+	width: 207px;
+	height: 64px;
+	position:absolute;
+	left:130px;
+	top:50px;
+	display: block;
+	background-image: url(/assets/buildingly_logo_new.png);
+	background-repeat: no-repeat;
+}
+
+#address{
+margin-bottom: 0px;
+padding-bottom: 0px;
+}
