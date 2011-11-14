@@ -72,7 +72,7 @@ $city = isset($_GET['city']) ? htmlentities($_GET['city']) : 'New York';
   </body>
 <?php else: ?>
   <body class="searchpage">
-	<form method="get" action="/index.php" id="addressSearch">
+	<form method="get" action="/" id="addressSearch">
 	  <div style="position: relative; left: 70px; top: 235px; width: 700px;">
 	    <input id="address" name="address" size="100" class="searchbar" type="text" value="902 Broadway" />
 	    <input type="hidden" name="city" value="New York" />
