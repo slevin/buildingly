@@ -14,9 +14,10 @@ class request{
 	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
       $this->response = curl_exec($ch);
       $this->response = preg_replace('/%u([a-fA-F0-9]{4})/', '&#x\\1;', $this->response);
+      $this->response = utf8_encode($this->response);
       curl_close($ch);
       if($response_type == 'obj'){
-        $this->response = json_decode(utf8_encode($this->response));
+        $this->response = json_decode($this->response);
       }
 	  return $this->response;
 	}
