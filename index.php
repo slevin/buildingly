@@ -60,11 +60,13 @@ if($_POST){
        </div>
        
         <div class="span-one-third" style="border: none;">
-          <h2>SOCIAL FEEDS</h2>
-          <div id="loadingfoursquare" class="loading"></div>
-          <div id="foursquare"></div>
+          <h2>EVENTS NEARBY</h2>
+          <!--  <div id="loadingfoursquare" class="loading"></div>
+          <div id="foursquare"></div> -->
           <div id="loadingmeetup" class="loading"></div>
           <div id="meetup"></div>
+          <div id="loadingeventbrite" class="loading"></div>
+          <div id="eventbrite"></div>
         </div>
       </div>
 

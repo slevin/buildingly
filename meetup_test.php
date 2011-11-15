@@ -8,14 +8,13 @@ $ch = curl_init($meetup_url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $output = curl_exec($ch);
 curl_close($ch);
-
+$output = utf8_encode($output);
 $meetup_json = json_decode($output);
-
 $events = $meetup_json->results;
 
 date_default_timezone_set("America/New_York");
 
-if(is_object($events)){
+if(is_object($events[0])){
 echo "<ul class=\"meetup_list\">";
 foreach($events as $event) {
     /*

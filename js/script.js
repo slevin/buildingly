@@ -9,8 +9,8 @@ $(function(){
     
     $('#mainpagesearchform').submit(function(e){
     	e.preventDefault();
-    	$('#foursquare, #yipit, #ordr, #meetup').html('').end();
-    	$('#loadingfoursquare, #loadingyipit, #loadingordr, #loadingmeetup').show();
+    	$('#yipit, #ordr, #meetup').html('').end();
+    	$('#loadingyipit, #loadingordr, #loadingmeetup').show();
     	
     	address = $('#address').val();
     	city = 'New York';
@@ -30,21 +30,25 @@ $(function(){
 
 function getlocalinfo(arrLatLon){
 	
-	$.ajax({url:"foursquare_test.php?lat="+arrLatLon[0]+"&long="+arrLatLon[1], 
+	/*$.ajax({url:"foursquare_test.php?lat="+arrLatLon[0]+"&long="+arrLatLon[1], 
 	dataType:'html',
 	success:function(data){$('#foursquare').append(data); $('#loadingfoursquare').hide();}});
-
-	$.ajax({url:"yipit_test.php?lat="+arrLatLon[0]+"&long="+arrLatLon[1],
+*/
+	$.ajax({url:"populate_feed.php?lat="+arrLatLon[0]+"&long="+arrLatLon[1]+'&partners=y',
 	dataType:'html',
 	success:function(data){$('#yipit').append(data); $('#loadingyipit').hide();}});
 
-	$.ajax({url:"ordr_test.php", 
+	$.ajax({url:"populate_feed.php?lat="+arrLatLon[0]+"&long="+arrLatLon[1]+'&partners=o', 
 	dataType:'html',
 	success:function(data){$('#ordr').append(data); $('#loadingordr').hide();}});
 
 	$.ajax({url:"meetup_test.php?lat="+arrLatLon[0]+"&long="+arrLatLon[1],
 	dataType:'html',
 	success:function(data){$('#meetup').append(data); $('#loadingmeetup').hide();}});
+	
+	$.ajax({url:"eventbrite_test.php?lat="+arrLatLon[0]+"&long="+arrLatLon[1],
+		dataType:'html',
+		success:function(data){$('#eventbrite').append(data); $('#loadingeventbrite').hide();}});
 }
 
 function getURLParam(strParamName){
